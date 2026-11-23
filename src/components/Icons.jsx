@@ -55,6 +55,36 @@ const P = {
       <circle cx="7" cy="7" r="1.5" />
     </>
   ),
+  play: <path d="M7 4.5v15l13-7.5-13-7.5z" fill="currentColor" />,
+  star: <path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9L12 2.5z" fill="currentColor" />,
+  plus: <path d="M12 5v14M5 12h14" />,
+  chart: (
+    <>
+      <path d="M3 3v18h18" />
+      <path d="M7 15l4-4 3 3 6-7" />
+      <path d="M17 7h3v3" />
+    </>
+  ),
+  target: (
+    <>
+      <circle cx="12" cy="12" r="9.5" />
+      <circle cx="12" cy="12" r="5.5" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    </>
+  ),
+  eye: (
+    <>
+      <path d="M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12z" />
+      <circle cx="12" cy="12" r="3.5" />
+    </>
+  ),
+  lock: (
+    <>
+      <rect x="4.5" y="10.5" width="15" height="11" rx="2.5" />
+      <path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" />
+      <circle cx="12" cy="16" r="1.3" fill="currentColor" />
+    </>
+  ),
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
   menu: <path d="M3 7h18M3 12h18M3 17h18" />,
   close: <path d="M6 6l12 12M18 6L6 18" />,

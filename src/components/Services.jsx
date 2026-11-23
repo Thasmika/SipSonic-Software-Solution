@@ -2,6 +2,7 @@ import Reveal, { SectionHead } from './Reveal.jsx'
 import TiltCard from './TiltCard.jsx'
 import Icon from './Icons.jsx'
 import { SERVICES } from '../data.js'
+import { to } from '../links.js'
 
 export default function Services() {
   return (
@@ -11,11 +12,11 @@ export default function Services() {
           eyebrow="What we build"
           title="Software that makes your business"
           accent="smarter"
-          text="From intelligent AI agents to polished mobile and web apps, we turn your ideas into products people love to use."
+          text="From intelligent AI agents and AI-powered dashboards to polished mobile and web apps, we turn your ideas into products people love to use."
         />
         <div className="services-grid">
           {SERVICES.map((s, i) => (
-            <Reveal key={s.title} delay={i * 0.1}>
+            <Reveal key={s.slug} delay={i * 0.1}>
               <TiltCard className="service-card">
                 <div className="icon-3d">
                   <Icon name={s.icon} size={30} />
@@ -27,6 +28,9 @@ export default function Services() {
                     <span key={t}>{t}</span>
                   ))}
                 </div>
+                <a href={to(`services/#${s.slug}`)} className="card-link">
+                  Learn more <Icon name="arrow" size={16} />
+                </a>
                 <span className="card-num">0{i + 1}</span>
               </TiltCard>
             </Reveal>

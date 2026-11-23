@@ -1,3 +1,5 @@
+import { to } from '../links.js'
+
 export function LogoIcon({ size = 36 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 120 120" aria-hidden="true">
@@ -17,7 +19,7 @@ export function LogoIcon({ size = 36 }) {
 
 export default function Logo() {
   return (
-    <a href="#top" className="logo" aria-label="SipSonic Software Solutions home">
+    <a href={to('')} className="logo" aria-label="SipSonic Software Solutions home">
       <LogoIcon />
       <span className="logo-text">
         <span className="logo-word">

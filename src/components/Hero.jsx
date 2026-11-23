@@ -1,10 +1,11 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Icon from './Icons.jsx'
+import { to } from '../links.js'
 
 const HeroScene = lazy(() => import('./HeroScene.jsx'))
 
-const WORDS = ['AI Agents', 'Web Apps', 'Mobile Apps', 'Custom Software']
+const WORDS = ['AI Agents', 'AI Dashboards', 'Web Apps', 'Mobile Apps', 'Custom Software']
 
 function RotatingWord() {
   const [i, setI] = useState(0)
@@ -42,7 +43,7 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <motion.span className="pill" {...up(0.1)}>
-            <span className="dot" /> AI-powered software studio · Sri Lanka
+            <span className="dot" /> AI-powered software company · Sri Lanka
           </motion.span>
           <motion.h1 {...up(0.2)}>
             Smart Software.
@@ -55,15 +56,16 @@ export default function Hero() {
             that help your business grow, all at a <strong className="hl">reasonable price</strong>.
           </motion.p>
           <motion.div className="hero-ctas" {...up(0.5)}>
-            <a href="#contact" className="btn btn-primary">
+            <a href={to('contact/')} className="btn btn-primary">
               Start Your Project <Icon name="arrow" size={18} />
             </a>
-            <a href="#services" className="btn btn-ghost">
+            <a href={to('services/')} className="btn btn-ghost">
               Explore Services
             </a>
           </motion.div>
           <motion.ul className="hero-badges" {...up(0.65)}>
             <li><Icon name="bot" size={18} /> AI Agents</li>
+            <li><Icon name="chart" size={18} /> Dashboards</li>
             <li><Icon name="globe" size={18} /> Web</li>
             <li><Icon name="phone" size={18} /> Mobile</li>
             <li><Icon name="cpu" size={18} /> Custom</li>

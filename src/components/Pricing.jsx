@@ -2,17 +2,20 @@ import Reveal, { SectionHead } from './Reveal.jsx'
 import TiltCard from './TiltCard.jsx'
 import Icon from './Icons.jsx'
 import { PRICING, PRICING_PERKS } from '../data.js'
+import { to } from '../links.js'
 
-export default function Pricing() {
+export default function Pricing({ showHead = true }) {
   return (
     <section id="pricing" className="section">
       <div className="container">
-        <SectionHead
-          eyebrow="Affordable pricing"
-          title="Quality software at a"
-          accent="reasonable price"
-          text="Big-company quality without the big-company price. Every project gets a clear, fair quote based on what you really need."
-        />
+        {showHead && (
+          <SectionHead
+            eyebrow="Affordable pricing"
+            title="Quality software at a"
+            accent="reasonable price"
+            text="Big-company quality without the big-company price. Every project gets a clear, fair quote based on what you really need."
+          />
+        )}
         <div className="pricing-grid">
           {PRICING.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.12}>
@@ -31,7 +34,7 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className={`btn ${p.popular ? 'btn-primary' : 'btn-ghost'} btn-block`}>
+                <a href={to('contact/')} className={`btn ${p.popular ? 'btn-primary' : 'btn-ghost'} btn-block`}>
                   {p.cta} <Icon name="arrow" size={18} />
                 </a>
               </TiltCard>

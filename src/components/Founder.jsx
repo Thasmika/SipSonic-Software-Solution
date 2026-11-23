@@ -12,7 +12,9 @@ export default function Founder() {
           <TiltCard className="founder-card" max={10}>
             <div className="avatar">
               <div className="avatar-ring" />
-              <div className="avatar-core">TC</div>
+              <div className="avatar-core">
+                <img src={`${import.meta.env.BASE_URL}images/founder.jpg`} alt="Thasmika Chamath, founder of SipSonic" />
+              </div>
             </div>
             <h3>Thasmika Chamath</h3>
             <p className="founder-role grad">Founder · Professional AI Engineer</p>
