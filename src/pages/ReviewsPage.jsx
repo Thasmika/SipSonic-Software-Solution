@@ -1,6 +1,5 @@
 import PageHero from '../components/PageHero.jsx'
 import Testimonials from '../components/Testimonials.jsx'
-import Stats from '../components/Stats.jsx'
 import CustomerReviews from '../components/CustomerReviews.jsx'
 
 export default function ReviewsPage() {
@@ -19,7 +18,6 @@ export default function ReviewsPage() {
       </PageHero>
       <Testimonials showHead={false} />
       <CustomerReviews />
-      <Stats />
     </>
   )
 }
