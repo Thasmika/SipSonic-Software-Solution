@@ -133,7 +133,7 @@ export const PRODUCTS = [
     ],
     tags: ['HR', 'Fleet Management', 'Web App'],
     video: 'videos/SipSonic_HR_Fleet_Management_Final.mp4',
-    poster: '',
+    poster: 'posters/hr-fleet-management.jpg',
   },
   {
     slug: 'product-three',
