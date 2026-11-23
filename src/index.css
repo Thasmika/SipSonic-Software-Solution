@@ -562,7 +562,7 @@ h2 { font-size: clamp(32px, 4.2vw, 50px); line-height: 1.12; font-weight: 700; l
 .cr-who strong { display: block; font-size: 15px; font-weight: 600; color: var(--navy); overflow-wrap: anywhere; }
 .cr-who small { display: block; font-size: 13px; color: var(--muted); }
 .cr-card time { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
-.cr-empty { padding: 28px; border-radius: var(--radius); border: 1.5px dashed rgba(91, 59, 245, .25); color: var(--muted); text-align: center; }
+.cr-layout.cr-solo { grid-template-columns: minmax(0, 620px); justify-content: center; }
 .star-off { color: #D5DCEA; }
 .cr-form-wrap { position: sticky; top: 100px; }
 .review-form-title { font-size: 20px; color: var(--navy); }

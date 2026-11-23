@@ -129,16 +129,12 @@ ${form.text}`
 
 export default function CustomerReviews() {
   const [reviews, setReviews] = useState([])
-  const [state, setState] = useState(reviewsEnabled ? 'loading' : 'off') // loading | ready | error | off
 
   useEffect(() => {
     if (!reviewsEnabled) return
     fetchApprovedReviews()
-      .then((r) => {
-        setReviews(r)
-        setState('ready')
-      })
-      .catch(() => setState('error'))
+      .then(setReviews)
+      .catch(() => {}) // no reviews shown if loading fails; the form still works
   }, [])
 
   const avg = reviews.length ? reviews.reduce((s, r) => s + r.rating, 0) / reviews.length : 0
@@ -152,9 +148,9 @@ export default function CustomerReviews() {
           accent="customers"
           text="Real feedback from people who worked with SipSonic. Share yours below."
         />
-        <div className="cr-layout">
-          <div className="cr-list">
-            {reviews.length > 0 && (
+        <div className={`cr-layout ${reviews.length ? '' : 'cr-solo'}`}>
+          {reviews.length > 0 && (
+            <div className="cr-list">
               <div className="cr-summary">
                 <strong>{avg.toFixed(1)}</strong>
                 <div>
@@ -164,29 +160,24 @@ export default function CustomerReviews() {
                   </small>
                 </div>
               </div>
-            )}
-            {state === 'loading' && <p className="cr-empty">Loading reviews...</p>}
-            {state === 'error' && <p className="cr-empty">Reviews couldn't be loaded right now. Please try again later.</p>}
-            {(state === 'off' || (state === 'ready' && reviews.length === 0)) && (
-              <p className="cr-empty">No reviews yet. Be the first to share your experience!</p>
-            )}
-            {reviews.map((r, i) => (
-              <Reveal key={r.id} delay={Math.min(i, 4) * 0.06}>
-                <article className="cr-card">
-                  <div className="cr-card-head">
-                    <span className="reviewer-avatar">{initials(r.name) || '?'}</span>
-                    <span className="cr-who">
-                      <strong>{r.name}</strong>
-                      {(r.role || r.company) && <small>{[r.role, r.company].filter(Boolean).join(', ')}</small>}
-                    </span>
-                    <time dateTime={r.createdAt}>{fmtDate(r.createdAt)}</time>
-                  </div>
-                  <Stars value={r.rating} />
-                  <p>{r.text}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+              {reviews.map((r, i) => (
+                <Reveal key={r.id} delay={Math.min(i, 4) * 0.06}>
+                  <article className="cr-card">
+                    <div className="cr-card-head">
+                      <span className="reviewer-avatar">{initials(r.name) || '?'}</span>
+                      <span className="cr-who">
+                        <strong>{r.name}</strong>
+                        {(r.role || r.company) && <small>{[r.role, r.company].filter(Boolean).join(', ')}</small>}
+                      </span>
+                      <time dateTime={r.createdAt}>{fmtDate(r.createdAt)}</time>
+                    </div>
+                    <Stars value={r.rating} />
+                    <p>{r.text}</p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          )}
           <Reveal delay={0.1} className="cr-form-wrap">
             <ReviewForm />
           </Reveal>

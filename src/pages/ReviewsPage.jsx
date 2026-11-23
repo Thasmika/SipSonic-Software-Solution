@@ -2,7 +2,6 @@ import PageHero from '../components/PageHero.jsx'
 import Testimonials from '../components/Testimonials.jsx'
 import Stats from '../components/Stats.jsx'
 import CustomerReviews from '../components/CustomerReviews.jsx'
-import CtaBand from '../components/CtaBand.jsx'
 
 export default function ReviewsPage() {
   return (
@@ -21,7 +20,6 @@ export default function ReviewsPage() {
       <Testimonials showHead={false} />
       <CustomerReviews />
       <Stats />
-      <CtaBand title="Ready to be our next success story?" />
     </>
   )
 }
