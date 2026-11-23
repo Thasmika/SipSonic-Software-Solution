@@ -546,6 +546,43 @@ h2 { font-size: clamp(32px, 4.2vw, 50px); line-height: 1.12; font-weight: 700; l
 .notfound-code { display: block; font-size: clamp(90px, 14vw, 160px); font-weight: 800; line-height: 1; letter-spacing: -4px; margin-bottom: 10px; }
 .notfound .jump-links { margin: 28px 0 32px; }
 
+/* Customer reviews (Reviews page) */
+.customer-reviews { padding-top: 0; scroll-margin-top: 80px; }
+.cr-layout { display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px; align-items: start; }
+.cr-list { display: grid; gap: 18px; }
+.cr-summary { display: flex; align-items: center; gap: 18px; padding: 20px 24px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.cr-summary strong { font-size: 44px; font-weight: 800; line-height: 1; color: var(--navy); }
+.cr-summary .stars { margin-bottom: 4px; }
+.cr-summary small { font-size: 13.5px; color: var(--muted); }
+.cr-card { padding: 24px 26px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.cr-card .stars { margin: 14px 0 10px; }
+.cr-card p { font-size: 15px; line-height: 1.7; color: var(--text); white-space: pre-line; overflow-wrap: anywhere; }
+.cr-card-head { display: flex; align-items: center; gap: 14px; }
+.cr-who { flex: 1; min-width: 0; }
+.cr-who strong { display: block; font-size: 15px; font-weight: 600; color: var(--navy); overflow-wrap: anywhere; }
+.cr-who small { display: block; font-size: 13px; color: var(--muted); }
+.cr-card time { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+.cr-empty { padding: 28px; border-radius: var(--radius); border: 1.5px dashed rgba(91, 59, 245, .25); color: var(--muted); text-align: center; }
+.star-off { color: #D5DCEA; }
+.cr-form-wrap { position: sticky; top: 100px; }
+.review-form-title { font-size: 20px; color: var(--navy); }
+.review-form-sub { font-size: 14px; color: var(--muted); }
+.review-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field label small { font-weight: 400; color: var(--muted); }
+.star-picker { display: flex; gap: 4px; }
+.star-picker button { color: #D5DCEA; padding: 2px; border-radius: 8px; transition: color .15s, transform .15s; }
+.star-picker button.on { color: #FFB020; }
+.star-picker button:hover { transform: scale(1.12); }
+.star-picker button:focus-visible { outline: 2px solid var(--cyan-d); outline-offset: 2px; }
+@media (max-width: 900px) {
+  .cr-layout { grid-template-columns: 1fr; }
+  .cr-form-wrap { position: static; order: -1; }
+}
+@media (max-width: 520px) {
+  .review-form-row { grid-template-columns: 1fr; }
+  .cr-card { padding: 20px; }
+}
+
 /* ---------- Footer ---------- */
 .footer { position: relative; padding: 60px 0 28px; background: linear-gradient(135deg, #D4EFFC 0%, #E0D9FC 100%); color: var(--navy); }
 .footer::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--grad); }

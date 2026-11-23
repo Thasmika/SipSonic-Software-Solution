@@ -6,6 +6,14 @@ export const CONTACT = {
   formKey: '',
 }
 
+// Customer reviews on the Reviews page (Firebase Cloud Firestore). See README > Customer reviews.
+// Copy these two values from Firebase console > Project settings > General > Your apps (Web app).
+// While empty, the review form opens the visitor's email app instead.
+export const FIREBASE = {
+  apiKey: 'AIzaSyA64DRj9Yo1Di2-ddVDEH-LFsLZ9YVlwgA',
+  projectId: 'sipsonic-website',
+}
+
 // Main menu. `page` matches the page id set in scripts/pages.mjs.
 export const NAV = [
   { page: 'home', href: '', label: 'Home' },
