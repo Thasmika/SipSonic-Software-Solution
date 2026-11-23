@@ -1,6 +1,7 @@
 import Reveal from './Reveal.jsx'
 import TiltCard from './TiltCard.jsx'
 import Icon from './Icons.jsx'
+import ServiceArt from './ServiceArt.jsx'
 import { SERVICES } from '../data.js'
 import { to } from '../links.js'
 
@@ -17,6 +18,7 @@ export default function ServiceDetails() {
                   <Icon name={s.icon} size={54} />
                 </div>
                 <span className="service-visual-num">0{i + 1}</span>
+                <ServiceArt slug={s.slug} />
                 <div className="tags">
                   {s.tags.map((t) => (
                     <span key={t}>{t}</span>
