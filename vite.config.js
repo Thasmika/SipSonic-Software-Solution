@@ -3,15 +3,15 @@ import react from '@vitejs/plugin-react'
 import { generatePages } from './scripts/pages.mjs'
 
 // Full public address of the site, used for canonical links, social previews and the sitemap.
-// Change this if you move to a custom domain (keep the trailing slash).
-const SITE_URL = process.env.SITE_URL || 'https://thasmika.github.io/SipSonic-Software-Solution/'
+// Keep the trailing slash.
+const SITE_URL = process.env.SITE_URL || 'https://sipsonic.com.lk/'
 
 // One HTML file per page (Home, Services, Products, each product, About, Contact, ...).
 const input = generatePages(SITE_URL)
 
 export default defineConfig({
-  // GitHub Pages serves the site from /<repo-name>/; other hosts (Vercel, Netlify) use /
-  base: process.env.GITHUB_PAGES ? '/SipSonic-Software-Solution/' : '/',
+  // Served from the root of the custom domain (sipsonic.com.lk), so the base is always /
+  base: '/',
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: 1200,

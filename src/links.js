@@ -1,4 +1,4 @@
-// Every internal link goes through `to()` so it works both locally (/) and on GitHub Pages (/SipSonic-Software-Solution/).
+// Every internal link goes through `to()` so it always respects Vite's base URL.
 export const to = (path = '') => import.meta.env.BASE_URL + path.replace(/^\//, '')
 
 // Which page is this? Set on <div id="root" data-page="..."> by scripts/pages.mjs.
