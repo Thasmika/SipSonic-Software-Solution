@@ -592,6 +592,14 @@ h2 { font-size: clamp(32px, 4.2vw, 50px); line-height: 1.12; font-weight: 700; l
 .footer-links, .footer-contact { display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; color: var(--muted); font-weight: 500; }
 .footer-links a, .footer-contact a { transition: color .2s; }
 .footer-links a:hover, .footer-contact a:hover { color: var(--indigo); }
+.footer-contact a { display: inline-flex; align-items: center; gap: 10px; }
+.footer-contact .fc-icon { flex: none; display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: #fff; box-shadow: 0 2px 8px rgba(91, 59, 245, .12); transition: transform .2s; }
+.footer-contact a:hover .fc-icon { transform: translateY(-2px); }
+.fc-whatsapp { color: #25D366; }
+.fc-web { color: var(--indigo); }
+.fc-facebook { color: #1877F2; }
+.fc-tiktok { color: #000; }
+.fc-mail { color: #EA4335; }
 .footer-bottom { margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(91, 59, 245, .22); font-size: 13px; color: #475A80; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px; }
 .footer-legal { display: flex; gap: 20px; }
 .footer-legal a { transition: color .2s; }

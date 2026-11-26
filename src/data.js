@@ -2,6 +2,9 @@ export const CONTACT = {
   phone: '+94 70 272 0050',
   phoneRaw: '94702720050',
   email: 'thasmikachamath@gmail.com',
+  website: 'www.sipsonic.com.lk',
+  facebook: 'facebook.com/sipsonic',
+  tiktok: 'tiktok.com/@sipsonic.software',
   // Free key from https://web3forms.com (enter your email, they send the key). Leave empty to fall back to opening the visitor's email app.
   formKey: '',
 }
